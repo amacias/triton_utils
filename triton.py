@@ -55,5 +55,5 @@ def research_time(researched, science, target_lvl):
     print "Current Research ETA: %dd %dh" % (hours // 24, hours % 24)
 
 
-def ships_per_hour(infrastructure, manufacturing=1):
-    return infrastructure * (manufacturing + 5)
+def ships_per_hour(infrastructure, manufacturing=1, hours=1):
+    return floor(hours * (infrastructure * (manufacturing + 5) / 24))
