@@ -44,3 +44,12 @@ def improve_ind(star_resources, start_lvl, end_lvl):
 
 def improve_sci(star_resources, start_lvl, end_lvl):
     return sum(buy_sci(star_resources, _) for _ in range(start_lvl + 1, end_lvl + 1))
+
+
+def tech_cost(level):
+    return (level - 1) * 144
+
+
+def research_time(researched, science, target_lvl):
+    hours = (tech_cost(target_lvl) - researched) / science
+    print "Current Research ETA: %dd %dh" % (hours // 24, hours % 24)
