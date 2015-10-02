@@ -1,19 +1,15 @@
 from __future__ import division
-from math import floor
-
-
-def ceildiv(a, b):
-    return -(-a // b)
+from math import ceil, floor
 
 
 def combat(def_ships, def_weapons, att_ships, att_weapons):
     def_weapons += 1
-    def_rounds = ceildiv(def_ships, att_weapons)
+    def_rounds = ceil(def_ships / att_weapons)
     surviving_att = att_ships - (def_rounds * def_weapons)
     if surviving_att > 0:
         return "Attacker wins with %i ships remaining" % surviving_att
     else:
-        att_rounds = ceildiv(att_ships, def_weapons)
+        att_rounds = ceil(att_ships / def_weapons)
         surviving_def = def_ships - ((att_rounds - 1) * att_weapons)
         return "Defender wins with %i ships remaining" % surviving_def
 
