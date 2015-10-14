@@ -52,4 +52,4 @@ def research_time(researched, science, target_lvl):
 
 
 def ships_per_hour(infrastructure, manufacturing=1, hours=1):
-    return floor(hours * (infrastructure * (manufacturing + 5) / 24))
+    return hours * (infrastructure * (manufacturing + 5) / 24)
