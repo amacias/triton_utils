@@ -22,7 +22,7 @@ def make_teams(people):
 
     for sublist in people:
         shuffle(sublist)
-        pivot = len(sublist) / 2
+        pivot = len(sublist) // 2
         r['Team A'].extend(sublist[:pivot])
         r['Team B'].extend(sublist[pivot:])
 
