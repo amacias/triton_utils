@@ -1,5 +1,32 @@
 from __future__ import division
 from math import ceil, floor
+from random import shuffle
+
+
+def make_teams(people):
+    """Makes 2 teams of people.
+
+    People is a list of lists, and people get shuffled only into their sublist.
+
+    Example:
+    people = [['John', 'Arthur', 'Ajax', 'Thor'],
+              ['Meaghan', 'Jane']]
+
+    Will result in 2 teams, with 3 players, two coming from the first list,
+    one from the second list.
+
+    This allows to balance players of different skill levels, by adding those of
+    a similar skill into the same sublist.
+    """
+    r = {'Team A': [], 'Team B': []}
+
+    for sublist in people:
+        shuffle(sublist)
+        pivot = len(sublist) / 2
+        r['Team A'].extend(sublist[:pivot])
+        r['Team B'].extend(sublist[pivot:])
+
+    return r
 
 
 def combat(def_ships, def_weapons, att_ships, att_weapons):
