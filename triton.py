@@ -1,4 +1,3 @@
-from __future__ import division
 from math import ceil, floor
 from random import shuffle
 
@@ -75,7 +74,7 @@ def tech_cost(level):
 
 def research_time(researched, science, target_lvl):
     hours = (tech_cost(target_lvl) - researched) / science
-    print "Current Research ETA: %dd %dh" % (hours // 24, ceil(hours % 24))
+    print("Current Research ETA: %dd %dh" % (hours // 24, ceil(hours % 24)))
 
 
 def ships_per_hour(infrastructure, manufacturing=1, hours=1):
